@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 require('dotenv').config();
 
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const withTypescript = require('@zeit/next-typescript');
-/* eslint-enable */
 
 module.exports = withTypescript({
   webpack: config => {
