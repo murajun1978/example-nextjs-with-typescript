@@ -1,19 +1,32 @@
 module.exports = {
   env: {
-    node: true
+    node: true,
+    'jest/globals': true,
   },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
     'prettier',
-    'prettier/@typescript-eslint'
+    'prettier/@typescript-eslint',
+    'plugin:jest/recommended',
+    'plugin:react/recommended',
   ],
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'jest', 'react'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module',
     project: './tsconfig.json',
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
-  rules: {},
+  rules: {
+    '@typescript-eslint/explicit-function-return-type': 0,
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 };

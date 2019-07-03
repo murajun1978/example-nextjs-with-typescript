@@ -6,3 +6,6 @@ node_modules/
 
 # next.js config file
 next.config.js
+
+# jest config file
+jest.config.js

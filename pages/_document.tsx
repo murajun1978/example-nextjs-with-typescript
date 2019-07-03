@@ -1,7 +1,9 @@
+import React from 'react';
 import Document, { NextDocumentContext } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 export default class extends Document {
+  // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
   static async getInitialProps(ctx: NextDocumentContext) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
@@ -9,7 +11,7 @@ export default class extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
         });
 
       const initialProps = await Document.getInitialProps(ctx);
@@ -20,7 +22,7 @@ export default class extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        )
+        ),
       };
     } finally {
       sheet.seal();
