@@ -26,3 +26,9 @@ Run test with Jest:
 ```
 $ npm test
 ```
+
+Run Storybook:
+
+```
+$ npm run start:storybook
+```
