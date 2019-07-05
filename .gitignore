@@ -13,3 +13,6 @@ node_modules/
 
 # Jest coverage directory
 coverage
+
+# Storybook build output
+storybook-static
